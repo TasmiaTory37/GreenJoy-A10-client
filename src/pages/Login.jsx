@@ -113,7 +113,7 @@ const Login = () => {
                         </button>
 
                         <label className="label">
-                            <p  to="/auth/forgot-password"className="label text-red-500 mt-3 link link-hover">Forgot password?</p>
+                            <p  className="label text-red-500 mt-3 link link-hover">Forgot password?</p>
                         </label>
 
                         {error.login && (
@@ -126,7 +126,7 @@ const Login = () => {
                         
                         <button className="btn bg-green-600 text-white mt-4">Login</button>
                         <button onClick={handleGoogleLogIn}  className='btn  mt-4 '><FaGoogle className='text-blue-800'></FaGoogle> Login With Google</button>
-                        <p className=' text-base'>Don't have an Account? <Link className='text-green-500 link link-hover' to="/auth/signup">Signup</Link>  </p>
+                        <p className=' text-base'>Don't have an Account? <Link className='text-green-500 link link-hover' to="/auth/register">Register</Link>  </p>
                     </fieldset>
                 </form>
             </div>

@@ -2,12 +2,12 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import AuthLayout from "../layouts/AuthLayout";
 import ExploreGardeners from "../pages/ExploreGardeners";
 import ShareTips from "../pages/ShareTips";
 import MyTips from "../pages/MyTips";
 import BrowseTips from "../pages/BrowseTips";
+import Register from "../pages/Register";
 
 export const router=createBrowserRouter([
     {
@@ -34,8 +34,8 @@ export const router=createBrowserRouter([
             Component: Login,
         },
         {
-            path:'/signup',
-            Component: Signup,
+            path:'/register',
+            Component: Register,
         },
         {
             path:'/browsetips',
@@ -57,8 +57,8 @@ export const router=createBrowserRouter([
           element:<AuthLayout></AuthLayout>,
           children:[
            {
-               path:'/auth/signup',
-               element:<Signup></Signup>
+               path:'/auth/register',
+               element:<Register></Register>
              },
              {
               path:'/auth/login',

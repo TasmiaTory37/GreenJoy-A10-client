@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
-const Signup = () => {
+const Register = () => {
 
    useEffect(() => {
          document.title = "GreenJoy - Signup"; 
@@ -110,7 +110,7 @@ const Signup = () => {
         <div>
             <div className='flex justify-center items-center my-5'>  
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
-                            <h2 className='text-center font-bold text-2xl'>Register Here!</h2>
+                            <h2 className='text-center font-bold text-green-700 text-2xl'>Register Here!</h2>
                             <form onSubmit={handleSubmit} className="card-body ">
                                 <fieldset className="fieldset">
                                     <label className="text-base">Name</label>
@@ -131,8 +131,8 @@ const Signup = () => {
                                     showPassword ?<FaEye></FaEye> :<FaEyeSlash></FaEyeSlash>
                                     }
                                     </button>
-                                    <button className="btn bg-green-600 text-white mt-4">Signup</button>
-                                    <button onClick={handleGoogleLogin}  className='btn  mt-4 '><FaGoogle className='text-blue-800'></FaGoogle> Signup With Google</button>
+                                    <button className="btn bg-green-600 text-white mt-4">Register</button>
+                                    <button onClick={handleGoogleLogin}  className='btn  mt-4 '><FaGoogle className='text-blue-800'></FaGoogle> Register With Google</button>
                                     <p className=' text-base'>Already have an Account? <Link className='text-green-500 link link-hover' to="/auth/login">Login</Link>  </p>
                                 </fieldset>
                             </form>
@@ -142,4 +142,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Register;

@@ -3,7 +3,7 @@ import logo from '../assets/logo.jpg'
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link, NavLink } from 'react-router';
 const Navbar = () => {
-    const { user, logOut} = useContext(AuthContext);
+    const { user,logOut} = useContext(AuthContext);
   
   return (
                < div className="navbar bg-base-100 shadow-sm">
@@ -84,7 +84,7 @@ const Navbar = () => {
             />
             {/* Display Name Tooltip */}
             <div className="absolute top-full right-3 mt-2 hidden group-hover:flex flex-col items-start bg-gray-800 text-white text-sm py-2 px-3 rounded shadow-lg z-10">
-              <span>{user.email || "Anonymous"}</span>
+              <span>{user.displayName || user.email || "Anonymous"}</span>
               <button
                 onClick={logOut}
                 className="btn btn-error mt-2 w-full text-sm"
