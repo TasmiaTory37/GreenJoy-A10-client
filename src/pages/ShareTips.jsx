@@ -1,9 +1,95 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
+import { FaCanadianMapleLeaf } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
+    
 const ShareTips = () => {
+  const { user } = useContext(AuthContext);
+     const handleShare = e=> {
+        e.preventDefault();
+        const form = e.target;
+        const formData= new FormData(form);
+        const shareTips = Object.fromEntries(formData.entries());
+        console.log(shareTips);
+     
+      
+
+     fetch('http://localhost:3000/addTips',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(shareTips)
+     })
+     .then (res=> res.json())
+        .then (data=>{
+                if(data.insertedId){
+                    form.reset();
+                    Swal.fire({
+                        title: 'Congratulations!',
+                        text: 'Your tip has been shared successfully.',
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    })
+                }
+
+            })
+    }
+        
+
+
+      
     return (
-        <div>
-            
+        <div className="min-h-screen">
+            <form onSubmit={handleShare} className="max-w-xl mx-auto p-6 space-y-4  bg-white shadow rounded">
+                <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2"> <FaCanadianMapleLeaf size={30} className='text-green-600 '/>Share a Garden Tip</h2>
+
+                <input type="text" name="title" placeholder="Title" className="w-full border p-2 rounded" required />
+
+                <input type="text" name="plantType" placeholder="Plant Type / Topic" className="w-full border p-2 rounded" required />
+
+                <select name="difficulty" className="w-full border p-2 rounded">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+
+                <textarea name="description" placeholder="Description" rows="4" className="w-full border p-2 rounded" required></textarea>
+
+                <input type="text" name="imageUrl" placeholder="Image URL" className="w-full border p-2 rounded" />
+
+                <select name="category" className="w-full border p-2 rounded">
+                    <option value="Composting">Composting</option>
+                    <option value="Plant Care">Plant Care</option>
+                    <option value="Vertical Gardening">Vertical Gardening</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select name="availability" className="w-full border p-2 rounded">
+                    <option value="Public">Public</option>
+                    <option value="Hidden">Hidden</option>
+                </select>
+
+                <input
+                    type="text"
+                    name="userName"
+                    value={user?.name || user?.displayName || ''}
+                    readOnly
+                    className="w-full border p-2 rounded bg-gray-100 text-gray-700"
+                />
+                <input
+                    type="email"
+                    name="userEmail"
+                    value={user?.email || ''}
+                    readOnly
+                    className="w-full border p-2 rounded bg-gray-100 text-gray-700"
+                />
+
+                <button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white p-2 rounded">
+                    Submit Tip
+                </button>
+            </form>
         </div>
     );
 };

@@ -9,6 +9,8 @@ import MyTips from "../pages/MyTips";
 import BrowseTips from "../pages/BrowseTips";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
+import UpdateTips from "../pages/UpdateTips";
+import PrivetRout from "./PrivateRoute";
 
 export const router=createBrowserRouter([
     {
@@ -70,9 +72,17 @@ export const router=createBrowserRouter([
                 Component:ShareTips,
 
             },
+            
             {
-                path:'/auth/mytips',
-                Component:MyTips,
+            path: '/auth/mytips',
+            element: <PrivetRout><MyTips /></PrivetRout>,
+            loader: () => fetch('http://localhost:3000/addTips')
+            },
+
+            
+            {
+                path:'/auth/updatetips',
+                Component: UpdateTips,
             }
             
       
