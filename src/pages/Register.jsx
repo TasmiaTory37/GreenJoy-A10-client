@@ -18,8 +18,8 @@ const Register = () => {
     const navigate=useNavigate();
 
     const validatePassword = (password) => {
-    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || password.length < 8) {
-      return 'Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long';
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) ||  !/[!@#$%^&*(),.?":{}|<>]/.test(password) || password.length < 8) {
+      return 'Password must contain at least one uppercase letter, one lowercase letter,one special character and be at least 8 characters long';
     }
     return null; 
   };

@@ -8,12 +8,13 @@ import ShareTips from "../pages/ShareTips";
 import MyTips from "../pages/MyTips";
 import BrowseTips from "../pages/BrowseTips";
 import Register from "../pages/Register";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router=createBrowserRouter([
     {
       path: '/',
       Component: MainLayout,
-
+       errorElement:<ErrorPage/>,
 
     
       children:[
