@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { Slide } from 'react-awesome-reveal';
 
-const ExploreGardeners = () => {
+const FeaturedGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/gardeners') 
+    fetch('http://localhost:3000/activeGardeners')
       .then(res => res.json())
       .then(data => setGardeners(data));
   }, []);
 
   return (
     <div className="max-w-7xl mx-auto p-8 min-h-screen">
-      <h2 className="text-4xl font-extrabold text-green-700 mb-10 text-center">
-        Explore Gardeners
-      </h2>
+    <Slide>  <h2 className="text-4xl font-extrabold text-green-700 mb-10 text-center">Featured Gardeners</h2></Slide>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {gardeners.map((gardener) => (
@@ -28,21 +27,9 @@ const ExploreGardeners = () => {
                 className="rounded-full object-cover w-full h-full border-3 border-green-400"
               />
             </div>
-
             <h3 className="text-2xl font-semibold text-gray-900">{gardener.name}</h3>
-            
-            <p className="text-sm text-gray-600 mt-1 mb-1">
-              {gardener.gender}, Age {gardener.age}
-            </p>
-
-            <p className={`text-sm font-semibold mb-2 ${
-              gardener.status === 'active' ? 'text-green-600' : 'text-gray-400'
-            }`}>
-              Status: {gardener.status.charAt(0).toUpperCase() + gardener.status.slice(1)}
-            </p>
-
+            <p className="text-sm text-gray-600 mt-1 mb-2">{gardener.gender}, Age {gardener.age}</p>
             <p className="text-gray-700 text-center mb-3">{gardener.experience}</p>
-
             <div className="bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full">
               Tips Shared: {gardener.totalSharedTips}
             </div>
@@ -53,4 +40,4 @@ const ExploreGardeners = () => {
   );
 };
 
-export default ExploreGardeners;
+export default FeaturedGardeners;

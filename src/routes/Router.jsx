@@ -11,6 +11,8 @@ import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import UpdateTips from "../pages/UpdateTips";
 import PrivetRout from "./PrivateRoute";
+import TipDetails from "../pages/TipDetails";
+
 
 export const router=createBrowserRouter([
     {
@@ -41,17 +43,17 @@ export const router=createBrowserRouter([
             Component: Register,
         },
         {
-            path:'/browsetips',
-            Component:BrowseTips,
-
-        }
-
-
-
+            path: '/browsetips',
+            Component: BrowseTips,
+            loader: ({ request }) => {
+            const url = new URL(request.url);
+            const difficulty = url.searchParams.get('difficulty');
+            return fetch(`http://localhost:3000/publicTips${difficulty ? `?difficulty=${difficulty}` : ''}`);
+              }
+            }
 
     ]
     },
-
 
 
              
@@ -78,14 +80,18 @@ export const router=createBrowserRouter([
             element: <PrivetRout><MyTips /></PrivetRout>,
             loader: () => fetch('http://localhost:3000/addTips')
             },
-
             
             {
-                path:'/auth/updatetips',
-                Component: UpdateTips,
+            path: '/auth/tip-details/:id',
+            element: <PrivetRout><TipDetails /></PrivetRout>,
+           
+            },
+                
+            {
+            path: '/auth/update-tips/:id',
+            Component: UpdateTips,
             }
-            
-      
+
            
           ]
         },  

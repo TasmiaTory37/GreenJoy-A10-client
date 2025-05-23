@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const Login = () => {
 
      useEffect(() => {
-        document.title = "GreenJoy - Login"; // Set dynamic title for Home page
+        document.title = "GreenJoy - Login"; 
       }, []);
 
     const { userLogin, setUser,handleGoogle} = useContext(AuthContext);

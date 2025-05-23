@@ -11,6 +11,7 @@ const ShareTips = () => {
         const form = e.target;
         const formData= new FormData(form);
         const shareTips = Object.fromEntries(formData.entries());
+        shareTips.totalLiked = 0;
         console.log(shareTips);
      
       
@@ -45,30 +46,30 @@ const ShareTips = () => {
             <form onSubmit={handleShare} className="max-w-xl mx-auto p-6 space-y-4  bg-white shadow rounded">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2"> <FaCanadianMapleLeaf size={30} className='text-green-600 '/>Share a Garden Tip</h2>
 
-                <input type="text" name="title" placeholder="Title" className="w-full border p-2 rounded" required />
+                <input type="text" name="title" placeholder="Title" className="w-full border border-black text-black p-2 rounded" required />
 
-                <input type="text" name="plantType" placeholder="Plant Type / Topic" className="w-full border p-2 rounded" required />
+                <input type="text" name="plantType" placeholder="Plant Type / Topic" className="w-full border border-black text-black p-2 rounded" required />
 
-                <select name="difficulty" className="w-full border p-2 rounded">
+                <select name="difficulty" className="w-full border border-black text-black p-2 rounded">
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select>
 
-                <textarea name="description" placeholder="Description" rows="4" className="w-full border p-2 rounded" required></textarea>
+                <textarea name="description" placeholder="Description" rows="4" className="w-full border border-black text-black p-2 rounded" required></textarea>
 
-                <input type="text" name="imageUrl" placeholder="Image URL" className="w-full border p-2 rounded" />
+                <input type="text" name="imageUrl" placeholder="Image URL" className="w-full border border-black text-black p-2 rounded" />
 
-                <select name="category" className="w-full border p-2 rounded">
-                    <option value="Composting">Composting</option>
-                    <option value="Plant Care">Plant Care</option>
-                    <option value="Vertical Gardening">Vertical Gardening</option>
-                    <option value="Other">Other</option>
+                <select name="category" className="w-full border border-black text-black p-2 rounded">
+                    <option className='text-black'  value="Composting">Composting</option>
+                    <option className='text-black'  value="Plant Care">Plant Care</option>
+                    <option className='text-black' value="Vertical Gardening">Vertical Gardening</option>
+                    <option className='text-black' value="Other">Other</option>
                 </select>
 
-                <select name="availability" className="w-full border p-2 rounded">
-                    <option value="Public">Public</option>
-                    <option value="Hidden">Hidden</option>
+                <select name="availability" className="w-full border border-black text-black p-2 rounded">
+                    <option className='text-black' value="Public">Public</option>
+                    <option className='text-black' value="Hidden">Hidden</option>
                 </select>
 
                 <input

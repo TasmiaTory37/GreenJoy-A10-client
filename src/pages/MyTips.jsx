@@ -55,7 +55,7 @@ const MyTips = () => {
             </td>
             <td className="px-6 py-4 text-center space-x-2">
               <button
-                onClick={() => navigate(`/update-tip/${tip._id}`)}
+                onClick={() => navigate(`/auth/update-tips/${tip._id}`)}
                 className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded"
               >
                 Update
