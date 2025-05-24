@@ -1,12 +1,13 @@
 import React, {  useContext, useEffect, useState} from 'react';
 import logo from '../assets/logo.jpg'
 import { AuthContext } from '../Provider/AuthProvider';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 
 
 const Navbar = () => {
     const {user,logOut} = useContext(AuthContext);
       const [showLogout, setShowLogout] = useState(false);
+        const navigate = useNavigate();
     const [theme,setTheme]=useState(localStorage.getItem("theme")? localStorage.getItem("theme"):"light");
     useEffect(()=>{
         localStorage.setItem("theme",theme);
@@ -28,6 +29,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     await logOut();
     setShowLogout(false);
+    navigate('/');
   };
   
   return (
@@ -184,7 +186,7 @@ const Navbar = () => {
           />
 
          <div className="absolute top-full right-3 mt-2 hidden group-hover:flex flex-col items-start bg-gray-800 text-white text-sm py-2 px-3 rounded shadow-lg z-10">
-            <span>{user.displayName || user.email || "Anonymous"}</span>
+            <span>{user.displayName ||user.email|| "Anonymous"}</span>
           </div>
 
    

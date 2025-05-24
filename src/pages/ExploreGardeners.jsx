@@ -2,12 +2,25 @@ import React, { useEffect, useState } from 'react';
 
 const ExploreGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
+  const [loading, setLoading] = useState(true); // add loading state
 
   useEffect(() => {
-    fetch('http://localhost:3000/gardeners') 
+    fetch('http://localhost:3000/gardeners')
       .then(res => res.json())
-      .then(data => setGardeners(data));
+      .then(data => {
+        setGardeners(data);
+        setLoading(false); // stop loading after data is fetched
+      })
+      .catch(() => setLoading(false)); // also stop loading if error occurs
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto p-8 min-h-screen">
@@ -30,7 +43,7 @@ const ExploreGardeners = () => {
             </div>
 
             <h3 className="text-2xl font-semibold text-gray-900">{gardener.name}</h3>
-            
+
             <p className="text-sm text-gray-600 mt-1 mb-1">
               {gardener.gender}, Age {gardener.age}
             </p>

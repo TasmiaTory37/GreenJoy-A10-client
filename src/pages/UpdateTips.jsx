@@ -15,7 +15,9 @@ const UpdateTips = () => {
       .then(data => setFormData(data));
   }, [id]);
 
- if (!formData) return <div>Loading...</div>;
+ if (!formData) return <div className="flex justify-center items-center min-h-screen">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>;
 
   const handleChange = (e) => {
     setFormData(prev => ({

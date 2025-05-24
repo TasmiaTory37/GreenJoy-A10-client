@@ -41,7 +41,9 @@ const TipDetails = () => {
       .catch(() => setLikeLoading(false));
   };
 
-  if (loading) return <div className="p-6 text-center">Loading...</div>;
+  if (loading) return<div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
   if (!tip) return <div className="p-6 text-center">Tip not found</div>;
 
   return (
