@@ -48,7 +48,7 @@ export const router=createBrowserRouter([
             loader: ({ request }) => {
             const url = new URL(request.url);
             const difficulty = url.searchParams.get('difficulty');
-            return fetch(`http://localhost:3000/publicTips${difficulty ? `?difficulty=${difficulty}` : ''}`);
+            return fetch(`https://assignment-10-server-taupe-five.vercel.app/publicTips${difficulty ? `?difficulty=${difficulty}` : ''}`);
               }
             }
 
@@ -78,7 +78,7 @@ export const router=createBrowserRouter([
             {
             path: '/auth/mytips',
             element: <PrivetRout><MyTips /></PrivetRout>,
-            loader: () => fetch('http://localhost:3000/addTips')
+            loader: () => fetch('https://assignment-10-server-taupe-five.vercel.app/addTips')
             },
             
             {

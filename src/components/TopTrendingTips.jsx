@@ -7,7 +7,7 @@ const TopTrendingTips = () => {
   const [loading, setLoading] = useState(true);  // Create loading state
 
   useEffect(() => {
-    fetch('http://localhost:3000/topTrendingTips')
+    fetch('https://assignment-10-server-taupe-five.vercel.app/topTrendingTips')
       .then(res => res.json())
       .then(data => {
         setTips(data);

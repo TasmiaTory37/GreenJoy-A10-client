@@ -12,11 +12,11 @@ const ShareTips = () => {
         const formData= new FormData(form);
         const shareTips = Object.fromEntries(formData.entries());
         shareTips.totalLiked = 0;
-        console.log(shareTips);
+        // console.log(shareTips);
      
       
 
-     fetch('http://localhost:3000/addTips',{
+     fetch('https://assignment-10-server-taupe-five.vercel.app/addTips',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

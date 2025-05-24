@@ -1,12 +1,37 @@
-# React + Vite
+** Name of the Project : GreenJoy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+**Live Link  https://greenjoy-a10.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+**5 Bullet Points Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+1.User-Friendly Dashboard: Intuitive interface for users to add, view, and manage garden tips easily.
+
+
+2.Interactive Event Banner: Features a event banner showcasing upcoming gardening events with images, descriptions and  buttons.
+
+
+3.Top Trending Tips: Displays top-rated garden tips based on user likes and engagement.
+
+
+4.User Authentication: Users can log in and submit their own garden tips, with secure login via email or Google.
+
+
+
+5.Responsive Design: Fully responsive design optimized for mobile, tablet, and desktop viewing.
+
+
+
+**Project description
+
+
+GreenJoy is an online platform where gardening enthusiasts can share, explore, and engage with various gardening tips. Users can securely log in to submit tips, categorize them by difficulty, and interact with content through likes. The platform features advanced filtering, top-rated tips, and an event banner showcasing upcoming gardening events. With a user-friendly, responsive design and secure login facilities, GreenJoy helps gardeners of all levels improve their skills and stay informed.
+
+
+
+
+
+
+

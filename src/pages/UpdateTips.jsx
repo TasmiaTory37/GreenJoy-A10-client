@@ -10,7 +10,7 @@ const UpdateTips = () => {
   const [formData, setFormData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tip/${id}`)
+    fetch(`https://assignment-10-server-taupe-five.vercel.app/tip/${id}`)
       .then(res => res.json())
       .then(data => setFormData(data));
   }, [id]);
@@ -28,7 +28,7 @@ const UpdateTips = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/updateTip/${id}`, {
+    fetch(`https://assignment-10-server-taupe-five.vercel.app/updateTip/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

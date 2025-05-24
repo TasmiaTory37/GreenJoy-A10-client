@@ -6,7 +6,7 @@ const FeaturedGardeners = () => {
   const [loading, setLoading] = useState(true);  // Add loading state
 
   useEffect(() => {
-    fetch('http://localhost:3000/activeGardeners')
+    fetch('https://assignment-10-server-taupe-five.vercel.app/activeGardeners')
       .then(res => res.json())
       .then(data => {
         setGardeners(data);

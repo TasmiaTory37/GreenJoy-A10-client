@@ -11,7 +11,7 @@ const TipDetails = () => {
   const [likeLoading, setLikeLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tip/${id}`)
+    fetch(`https://assignment-10-server-taupe-five.vercel.app/tip/${id}`)
       .then(res => res.json())
       .then(data => {
         setTip(data);
@@ -27,7 +27,7 @@ const TipDetails = () => {
     if (likeLoading) return;
 
     setLikeLoading(true);
-    fetch(`http://localhost:3000/tip/like/${id}`, {
+    fetch(`https://assignment-10-server-taupe-five.vercel.app/tip/like/${id}`, {
       method: 'PATCH',
     })
       .then(res => res.json())

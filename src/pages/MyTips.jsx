@@ -31,7 +31,7 @@ const MyTips = () => {
     });
 
     if (confirm.isConfirmed) {
-      await fetch(`http://localhost:3000/deleteTip/${id}`, { method: 'DELETE' });
+      await fetch(`https://assignment-10-server-taupe-five.vercel.app/deleteTip/${id}`, { method: 'DELETE' });
       Swal.fire('Deleted!', 'Your tip has been deleted.', 'success');
       setMyTips(prev => prev.filter(tip => tip._id !== id));
     }
