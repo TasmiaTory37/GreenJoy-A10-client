@@ -1,6 +1,9 @@
 ** Name of the Project : GreenJoy
 
 
+![GreenJoy Banner](./src/assets/Screenshot%202025-06-25%20032111.png)
+
+
 **Live Link  https://greenjoy-a10.web.app
 
 
@@ -31,7 +34,52 @@ GreenJoy is an online platform where gardening enthusiasts can share, explore, a
 
 
 
+## NPM Packages Used
 
+**Frontend**
+
+1.React Router
+
+2.Tailwind CSS 
+
+3.DaisyUI
+
+4.Firebase
+
+5.react-simple-typewriter
+
+6.React icons
+
+7.sweetalert2
+
+8.Swiper js
+
+
+
+**Backend**
+
+1.Express.js 
+
+2.MongoDB 
+
+3.dotenv 
+
+4.cors
+
+
+
+## How to use
+
+# Clone the repository
+git clone https://github.com/yourusername/greenjoy.git
+
+cd greenjoy
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 
 
 
