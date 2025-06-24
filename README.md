@@ -69,6 +69,22 @@ GreenJoy is an online platform where gardening enthusiasts can share, explore, a
 4.cors
 
 
+# Dependencies
+
+    "@emotion/react": "^11.14.0",
+    "@tailwindcss/vite": "^4.1.7",
+    "firebase": "^11.7.3",
+    "react": "^19.1.0",
+    "react-awesome-reveal": "^4.3.1",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.6.0",
+    "react-simple-typewriter": "^5.0.1",
+    "sweetalert2": "^11.21.2",
+    "swiper": "^11.2.6",
+    "tailwindcss": "^4.1.7"
+    
+
 
 # How to use
 
