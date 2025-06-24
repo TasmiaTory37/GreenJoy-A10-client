@@ -89,7 +89,7 @@ GreenJoy is an online platform where gardening enthusiasts can share, explore, a
 # How to use
 
 ## Clone the repository
-git clone https://github.com/yourusername/greenjoy.git
+git clone https://github.com/TasmiaTory37/GreenJoy-A10-client.git
 
 cd greenjoy
 
