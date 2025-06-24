@@ -1,13 +1,15 @@
-** Name of the Project : GreenJoy
+# Name of the Project : GreenJoy
 
 
 ![GreenJoy Banner](./src/assets/Screenshot%202025-06-25%20032111.png)
 
 
-**Live Link  https://greenjoy-a10.web.app
+# Live Link  
+
+https://greenjoy-a10.web.app
 
 
-**5 Bullet Points Features
+# 5 Bullet Points Features
 
 
 1.User-Friendly Dashboard: Intuitive interface for users to add, view, and manage garden tips easily.
@@ -27,14 +29,14 @@
 
 
 
-**Project description
+# Project description
 
 
 GreenJoy is an online platform where gardening enthusiasts can share, explore, and engage with various gardening tips. Users can securely log in to submit tips, categorize them by difficulty, and interact with content through likes. The platform features advanced filtering, top-rated tips, and an event banner showcasing upcoming gardening events. With a user-friendly, responsive design and secure login facilities, GreenJoy helps gardeners of all levels improve their skills and stay informed.
 
 
 
-## NPM Packages Used
+# NPM Packages Used
 
 **Frontend**
 
@@ -68,17 +70,17 @@ GreenJoy is an online platform where gardening enthusiasts can share, explore, a
 
 
 
-## How to use
+# How to use
 
-# Clone the repository
+## Clone the repository
 git clone https://github.com/yourusername/greenjoy.git
 
 cd greenjoy
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# Start the development server
+## Start the development server
 npm run dev
 
 
