@@ -36,7 +36,7 @@ const UpdateTips = () => {
     .then(res => res.json())
     .then(() => {
       Swal.fire('Updated!', 'Your tip has been updated.', 'success');
-      navigate('/auth/mytips');
+      navigate('/auth/dashboard/mytips');
     });
   };
 

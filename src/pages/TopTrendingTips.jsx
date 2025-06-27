@@ -20,7 +20,7 @@ const TopTrendingTips = () => {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <Slide>
-        <h2 className="text-4xl font-extrabold text-green-700 my-10 text-center">
+        <h2 className="text-4xl font-extrabold text-green-700 mb-10 text-center">
           Top Trending Garden Tips
         </h2>
       </Slide>

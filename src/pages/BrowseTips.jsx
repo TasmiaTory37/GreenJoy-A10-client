@@ -4,16 +4,15 @@ import { FaEye } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 
 const BrowseTips = () => {
-  const tips = useLoaderData(); 
+  const tips = useLoaderData();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const selected = searchParams.get('difficulty'); 
-  const [loading, setLoading] = useState(true); // Set loading state
+  const selected = searchParams.get('difficulty');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading state
     if (tips.length > 0) {
-      setLoading(false); // Set loading to false once data is available
+      setLoading(false);
     }
   }, [tips]);
 
@@ -56,10 +55,10 @@ const BrowseTips = () => {
           onChange={handleFilterChange}
           className="border px-3 py-1 rounded"
         >
-          <option className='text-black' value="">All</option>
-          <option className='text-black' value="Easy">Easy</option>
-          <option className='text-black' value="Medium">Medium</option>
-          <option className='text-black' value="Hard">Hard</option>
+          <option className="text-black" value="">All</option>
+          <option className="text-black" value="Easy">Easy</option>
+          <option className="text-black" value="Medium">Medium</option>
+          <option className="text-black" value="Hard">Hard</option>
         </select>
       </div>
 
@@ -69,51 +68,39 @@ const BrowseTips = () => {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <div className="overflow-x-auto shadow-md rounded-lg border border-gray-200 bg-white">
-          <table className="min-w-full divide-y divide-gray-200 text-sm text-left">
-            <thead className="bg-green-50 text-green-800 uppercase text-xs">
-              <tr>
-                <th className="px-6 py-3">Title</th>
-                <th className="px-6 py-3">Category</th>
-                <th className="px-6 py-3">Difficulty</th> 
-                <th className="px-6 py-3">Image</th>
-                <th className="px-6 py-3 text-center">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
+        <>
+          {orderedTips.length > 0 ? (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {orderedTips.map((tip) => (
-                <tr key={tip._id} className="hover:bg-gray-50 transition">
-                  <td className="px-6 py-4 text-gray-800 font-medium">{tip.title}</td>
-                  <td className="px-6 py-4 text-gray-700">{tip.category}</td>
-                  <td className="px-6 py-4 text-gray-700 font-semibold">{tip.difficulty}</td> 
-                  <td className="px-6 py-4 text-center">
-                    <img
-                      src={tip.imageUrl}
-                      alt={tip.title}
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                  </td>
-                  <td className="px-6 py-4 text-center">
+                <div
+                  key={tip._id}
+                  className="border border-gray-200 rounded-lg shadow-md bg-white overflow-hidden hover:shadow-lg transition"
+                >
+                  <img
+                    src={tip.imageUrl}
+                    alt={tip.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4 space-y-2">
+                    <h3 className="text-xl font-semibold text-green-800">{tip.title}</h3>
+                    <p className="text-gray-600 text-sm">Category: <span className="font-medium">{tip.category}</span></p>
+                    <p className="text-gray-600 text-sm">Difficulty: <span className="font-semibold">{tip.difficulty}</span></p>
                     <button
                       onClick={() => navigate(`/auth/tip-details/${tip._id}`)}
-                      className="bg-green-100 text-green-700 hover:bg-green-200 px-3 py-1 rounded inline-flex items-center gap-2 text-sm"
+                      className="mt-2 bg-green-100 text-green-700 hover:bg-green-200 px-4 py-2 rounded inline-flex items-center gap-2 text-sm"
                     >
-                      <FaEye size={20} /> See More
+                      <FaEye size={18} /> See More
                     </button>
-                  </td>
-                </tr>
+                  </div>
+                </div>
               ))}
-
-              {tips.filter(tip => tip.difficulty === selected).length === 0 && selected && (
-                <tr>
-                  <td colSpan="5" className="text-center text-red-500 font-semibold py-6">
-                    No tips found for "{selected}" difficulty.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+            </div>
+          ) : (
+            <div className="text-center text-red-500 font-semibold py-6">
+              No tips found for "{selected}" difficulty.
+            </div>
+          )}
+        </>
       )}
     </div>
   );

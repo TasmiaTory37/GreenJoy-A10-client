@@ -44,7 +44,7 @@ const ShareTips = () => {
     return (
         <div className="min-h-screen">
             <form onSubmit={handleShare} className="max-w-xl mx-auto p-6 space-y-4  bg-white shadow rounded">
-                <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2"> <FaCanadianMapleLeaf size={30} className='text-green-600 '/>Share a Garden Tip</h2>
+                <h2 className="text-2xl font-bold text-green-700 flex items-center gap-2"> <FaCanadianMapleLeaf size={30} className='text-green-600 '/>Share a Garden Tip</h2>
 
                 <input type="text" name="title" placeholder="Title" className="w-full border border-black text-black p-2 rounded" required />
 

@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 const ExploreGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
-  const [loading, setLoading] = useState(true); // add loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     fetch('https://assignment-10-server-taupe-five.vercel.app/gardeners')
       .then(res => res.json())
       .then(data => {
         setGardeners(data);
-        setLoading(false); // stop loading after data is fetched
+        setLoading(false); 
       })
-      .catch(() => setLoading(false)); // also stop loading if error occurs
+      .catch(() => setLoading(false)); 
   }, []);
 
   if (loading) {
@@ -28,7 +28,7 @@ const ExploreGardeners = () => {
         Explore Gardeners
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {gardeners.map((gardener) => (
           <div
             key={gardener._id}

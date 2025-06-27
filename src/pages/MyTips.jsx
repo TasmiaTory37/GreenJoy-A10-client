@@ -88,7 +88,7 @@ const MyTips = () => {
                   </button>
                   <button
                     onClick={() => handleDelete(tip._id)}
-                    className="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded"
+                    className="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 mt-2 rounded"
                   >
                     Delete
                   </button>
